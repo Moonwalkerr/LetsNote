@@ -1,7 +1,7 @@
 import './App.css';
 import MainBar from './comps/main';
 import Sidebar from './comps/sidebar';
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import uuid from "react-uuid";
 
 
@@ -41,6 +41,13 @@ function App() {
     })
     setnotes(newNotesArray);
   }
+
+
+  // Storing Notes in Local Storage of Browser
+
+  useEffect(()=>{
+    localStorage.setItem("notes",JSON.stringify(notes));
+  },[notes])
 
   return ( 
   <div className ="App">
