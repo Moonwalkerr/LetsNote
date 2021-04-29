@@ -14,7 +14,10 @@ const Sidebar = ({notes, onAddNote,deleteNote}) => {
                     <button onClick={() =>deleteNote(note.id)}>Delete</button>
                 </div>
             <p>{note.body && note.body.substring(0,100)+"..."}</p>
-            <small className="note-meta">{note.lastModified}</small>
+            <small className="note-meta">Last Modified {new Date(note.lastModified).toLocaleDateString("en-GB",{
+                hour:"2-digit",
+                minute:"2-digit"
+            })}</small>
             </div>
                 })
             }
