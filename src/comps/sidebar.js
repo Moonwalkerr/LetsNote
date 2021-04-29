@@ -1,4 +1,4 @@
-const Sidebar = ({notes, onAddNote,deleteNote}) => {
+const Sidebar = ({notes, onAddNote,deleteNote,activeNote,setactiveNote}) => {
     return (
          <div className="app-sidebar">
         
