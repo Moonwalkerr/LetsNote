@@ -24,6 +24,14 @@ function App() {
     const newNotes = notes.filter(note=>note.id !== id);
     setnotes(newNotes);
   }
+
+  const getActiveNote = ()=>{
+    return notes.find((note)=>{
+      return note.id === activeNote
+      // will return obj of curr active note
+    })
+  }
+
   return ( 
   <div className ="App">
     <Sidebar 
@@ -32,7 +40,9 @@ function App() {
     deleteNote={deleteNote}
      onAddNote={onAddNote}
      notes={notes}/>
-    <MainBar/>
+    <MainBar
+    activeNote={getActiveNote()} // this function needs to be running always to pass current active note
+    />
     </div>
   );
 }
