@@ -32,6 +32,16 @@ function App() {
     })
   }
 
+  const onUpdateNote = (updatedNote) =>{
+    const newNotesArray = notes.map((note)=>{
+      if(note.id === activeNote){
+        return updatedNote
+      }
+      return note;
+    })
+    setnotes(newNotesArray);
+  }
+
   return ( 
   <div className ="App">
     <Sidebar 
@@ -41,6 +51,7 @@ function App() {
      onAddNote={onAddNote}
      notes={notes}/>
     <MainBar
+    onUpdateNote={onUpdateNote}
     activeNote={getActiveNote()} // this function needs to be running always to pass current active note
     />
     </div>
