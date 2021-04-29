@@ -14,6 +14,7 @@ const Sidebar = ({notes, onAddNote,deleteNote,activeNote,setactiveNote}) => {
         <div className="app-sidebar-notes">
             {sortedNotes.map(note =>{
                     return <div 
+                    key={note.id}
                     className={`app-sidebar-note 
                     ${note.id === activeNote && "active"}`} 
                     onClick={()=>setactiveNote(note.id)}>
