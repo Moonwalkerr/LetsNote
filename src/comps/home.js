@@ -1,6 +1,6 @@
 import '../App.css';
-import MainBar from './comps/main';
-import Sidebar from './comps/sidebar';
+import MainBar from './main';
+import Sidebar from './sidebar';
 import {useState,useEffect} from "react";
 import uuid from "react-uuid";
 

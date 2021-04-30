@@ -1,6 +1,6 @@
 import React from 'react';
 import SignUpForm from './comps/signUpForm';
-import {AuthProvider} from './context/AuthContext';
+import {AuthProvider} from './context/authCont';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from "./comps/home";
 import LoginForm from './comps/login';
