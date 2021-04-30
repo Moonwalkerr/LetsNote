@@ -1,10 +1,10 @@
 import LogoutBtn from "./logoutBtn";
 import SaveNoteBtn from "./saveNote"
 
-const RightBar = () => {
+const RightBar = ({notes}) => {
     return ( <div className="right-bar">
         <LogoutBtn/>
-        <SaveNoteBtn/>
+        <SaveNoteBtn notes={notes}/>
     </div> );
 }
  

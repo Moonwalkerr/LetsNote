@@ -4,12 +4,16 @@ import Sidebar from './sidebar';
 import {useState,useEffect} from "react";
 import uuid from "react-uuid";
 import RightBar from "./rightBar";
+import {useAuth} from "../context/authCont";
+import useFireStore from "../hooks/useFirestore";
 
 function Home() {
-  const [notes, setnotes] = useState(
-    localStorage.notes ? JSON.parse(localStorage.notes) : []
-  );
+
   const [activeNote, setactiveNote] = useState(false);
+  const {currentUser} = useAuth();
+
+   const {data} = useFireStore(currentUser.email);
+  const [notes, setnotes] = useState(data ? data: []);
   const onAddNote = () =>{
     const newNote = {
       id: uuid(),
@@ -62,7 +66,7 @@ function Home() {
     onUpdateNote={onUpdateNote}
     activeNote={getActiveNote()} // this function needs to be running always to pass current active note
     />
-    <RightBar/>   
+    <RightBar notes={notes}/>   
     </div>
   );
 }
