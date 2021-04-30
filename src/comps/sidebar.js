@@ -9,7 +9,7 @@ const Sidebar = ({notes, onAddNote,deleteNote,activeNote,setactiveNote}) => {
         
         <div className="app-sidebar-header">
             <h1>Let's Note</h1>
-            <button onClick={onAddNote}>New Note</button>
+            <button className="addButton" onClick={onAddNote}>+</button>
         </div>
         <div className="app-sidebar-notes">
             {sortedNotes.map(note =>{
