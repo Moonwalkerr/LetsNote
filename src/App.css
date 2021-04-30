@@ -5,7 +5,11 @@
 }
 
 /* GLOBAL STYLES */
-
+:root {
+  --primary: #4b7ccc;
+  --secondary: #ff0000;
+  --error: #fecf6d;
+}
 body,
 .App {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -26,7 +30,7 @@ button {
   font-family: inherit;
   cursor: pointer;
   color: white;
-  background-color:#4b7ccc;
+  background-color:var(--primary);
   padding:4px;
   border: 1px solid #333;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.02);
@@ -78,13 +82,12 @@ button:hover {
 }
 
 .side-note-title{
-  color:#4b7ccc;
+  color:var(--primary);
 }
 
 .app-sidebar-note button {
   color: white;
-  background-color: #ff0000;
-  /* background-color:#4b7ccc; */
+  background-color: var(--secondary);
 }
 .app-sidebar-note button:hover {
   /* color:white; */
@@ -127,7 +130,7 @@ button:hover {
   line-height: 100vh;
   text-align: center;
   font-size: 2rem;
-  color:#4b7ccc;
+  color:var(--primary);
 }
 
 /* Editing */
@@ -184,8 +187,7 @@ textarea{
 }
 
 .alert{
-  background-color:
-  #fecf6d;
+  background-color:var(--error);
   font-weight: bold;
 }
 
@@ -198,6 +200,34 @@ textarea{
   padding: 20px;
   /* min-height:100vh; */
   box-shadow: 1px 2px 4px black;
+}
+
+.signUpform h2,
+.loginForm h2,
+.forgotPaswd h2 {
+  font-size: 20px;
+}
+
+
+.signUpform h4,
+.loginForm h4,
+.forgotPaswd h5 {
+  font-size: 16px;
+}
+
+
+
+.signUpform Button,
+.loginForm Button,
+.forgotPaswd Button {
+  font-size: 16px;
+}
+.letsNote-label {
+  color: var(--primary)
+}
+
+.inputField {
+  text-align: center;
 }
 
 .logoutbtn {
@@ -250,8 +280,6 @@ textarea{
   .forgotPaswd h5 {
     font-size: 12px;
   }
-
-
 
   .signUpform Button,
   .loginForm Button,
