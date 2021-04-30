@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react';
 import {Button,Alert} from "react-bootstrap";
-import {useAuth} from '../context/AuthContext';
+import {useAuth} from '../context/authCont';
 import {useHistory}  from 'react-router-dom';
 const LogoutBtn = () => {
 
