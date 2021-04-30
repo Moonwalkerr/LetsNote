@@ -1,7 +1,7 @@
 import '../App.css';
 import MainBar from './main';
 import Sidebar from './sidebar';
-import {useState,useEffect} from "react";
+import {useState} from "react";
 import uuid from "react-uuid";
 import RightBar from "./rightBar";
 import {useAuth} from "../context/authCont";
