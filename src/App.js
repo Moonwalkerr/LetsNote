@@ -9,7 +9,7 @@ import PrvRoute from "./comps/privateRoute";
 
 function App() {
   return (
-    <div className="App">
+    <div >
      <Router>
       <AuthProvider>
         <Switch>
