@@ -51,7 +51,7 @@ function Home() {
   },[notes])
 
   return ( 
-  <div className ="Home">
+  <div className="App">
     <Sidebar 
     activeNote={activeNote}
     setactiveNote={setactiveNote}
