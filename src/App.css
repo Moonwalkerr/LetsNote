@@ -10,6 +10,7 @@
   --secondary: #ff0000;
   --error: #fecf6d;
 }
+
 body,
 .App {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -28,21 +29,23 @@ button {
   font-family: inherit;
   cursor: pointer;
   color: white;
-  background-color:var(--primary);
-  font-size:16px;
-  padding:4px 5px;
+  background-color: var(--primary);
+  font-size: 16px;
+  padding: 4px 5px;
   border-radius: 12px;
   border: 1px solid #333;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.02);
 }
-.addButton{
+
+.addButton {
   margin: 14px 0px;
-  height:30px;
-  width:50px;
+  height: 30px;
+  width: 50px;
 }
+
 button:hover {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  
+
 }
 
 .App {
@@ -65,11 +68,11 @@ button:hover {
 
 .app-sidebar-header h1 {
   margin: 0;
-  color:var(--secondary);
-  font-size:25px;
+  color: var(--secondary);
+  font-size: 25px;
   font-family: Roboto;
-  background-color:#333;
-  padding:12px 16px;
+  background-color: #333;
+  padding: 12px 16px;
   border-radius: 50%;
 }
 
@@ -88,21 +91,22 @@ button:hover {
   justify-content: space-between;
 }
 
-.side-note-title{
-  color:var(--primary);
+.side-note-title {
+  color: var(--primary);
 }
 
-.app-sidebar-note button {
+.delete-btn {
   color: white;
   background-color: var(--secondary);
-  font-size:15px;
-  padding:4px 5px;
+  font-size: 12px;
+  padding: 5px 6px;
   border-radius: 12px;
 }
-.app-sidebar-note button:hover {
-  /* color:white; */
-  box-shadow: 0px 5px 15px #4b7ccc1a;
+
+.delete-btn:hover {
+  box-shadow: 0px 5px 15px #6b99e441;
 }
+
 .app-sidebar-note p {
   margin: 10px 0;
 }
@@ -140,7 +144,7 @@ button:hover {
   line-height: 100vh;
   text-align: center;
   font-size: 2rem;
-  color:var(--primary);
+  color: var(--primary);
 }
 
 /* Editing */
@@ -164,10 +168,10 @@ textarea {
   height: 50px;
   font-size: 2rem;
   font-family: inherit;
-  border:1px solid black;
+  border: 1px solid black;
 }
-.app-main-note-edit 
-textarea{
+
+.app-main-note-edit textarea {
   font-size: 1.2rem;
   font-family: 'Times New Roman', Times, serif
 }
@@ -184,6 +188,7 @@ textarea{
   margin: 0;
   background-color: #333;
   color: var(--primary);
+  text-decoration: underline;
 }
 
 .markdown-preview {
@@ -191,13 +196,13 @@ textarea{
   font-size: 1rem;
   line-height: 2rem;
   margin: 2px 0px;
-  border:1px solid rgba(51, 51, 51, 0.534);
+  border: 1px solid rgba(51, 51, 51, 0.534);
   background-color: white;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.alert{
-  background-color:var(--error);
+.alert {
+  background-color: var(--error);
   font-weight: bold;
 }
 
@@ -225,13 +230,50 @@ textarea{
   font-size: 16px;
 }
 
+.right-bar {
+  border-left: 1px solid #b9b5b5;
+  padding: 25px;
+}
 
+.saveNote button {
+  background-color: #333;
+  width: 100%;
+  position: relative;
+  top: 70vh;
+  padding: 8px;
+  margin: 0px auto;
+  font-size: 16px;
+}
+
+.saveNote button:hover {
+  background-color: var(--primary);
+}
+
+.logoutbtn Button {
+  margin: 2px auto;
+  max-width: 100px;
+  width: 80px;
+  border-radius: 60px;
+  border: 1px solid #333;
+  background-color: #333;
+  box-shadow: 1px 1px 2px black;
+  font-size: 14px;
+  font-family: "Noto Serif";
+  color: white;
+}
+
+
+.logoutbtn Button:hover {
+  color: white;
+  background-color: var(--primary);
+}
 
 .signUpform Button,
 .loginForm Button,
 .forgotPaswd Button {
   font-size: 16px;
 }
+
 .letsNote-label {
   color: var(--primary)
 }
@@ -239,6 +281,7 @@ textarea{
 .inputField {
   text-align: center;
 }
+
 .profile {
   max-height: 50px;
   text-align: center;
@@ -254,35 +297,19 @@ textarea{
 }
 
 .user strong {
+  font-size:19px;
+  /* font-size:12px; */
   font-family: "Noto Serif";
   color: var(--primary);
 }
-.logoutbtn {
-  background-color: var(--primary);
-  border: 1px solid #333;
-  border-radius: 60px;
-  max-width: 100px;
-  width: 80px;
-  margin: 2px auto;
-  box-shadow: 1px 1px 2px black;
-}
-.logoutbtn Button {
-  font-size: 14px;
-  font-family: "Noto Serif";
-  color: white;
-}
 
-
-.logoutbtn Button:hover {
-  color: white;
-}
 @media screen and (max-width:638px) {
 
   .logoutbtn Button {
     font-size: 12px;
   }
 
- 
+
 
   .signUpform,
   .loginForm,
