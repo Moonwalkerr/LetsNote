@@ -24,7 +24,7 @@ const MainBar = ({activeNote,onUpdateNote}) => {
            <textarea name="" id="body"
             value={activeNote.body}
              onChange={(evt)=>onEditField("body",evt.target.value)}
-           placeholder="Write your notes here..."></textarea>
+           placeholder="Write your Notes here, This Editor is Markdown Enabled"></textarea>
             </div>
             <div className="app-main-note-preview">
              <h1 className="preview-title">{activeNote.title}</h1>
