@@ -182,9 +182,10 @@ textarea{
   background-color: white;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
-.alert {
+
+.alert{
   background-color:
-    #fecf6d;
+  #fecf6d;
   font-weight: bold;
 }
 
