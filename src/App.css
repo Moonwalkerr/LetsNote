@@ -26,18 +26,19 @@ button {
   border: 0;
   margin: 0;
   padding: 0;
-  font-size: inherit;
   font-family: inherit;
   cursor: pointer;
   color: white;
   background-color:var(--primary);
-  padding:4px;
+  font-size:15px;
+  padding:4px 5px;
+  border-radius: 12px;
   border: 1px solid #333;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.02);
 }
 
 button:hover {
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   
 }
 
@@ -61,9 +62,12 @@ button:hover {
 
 .app-sidebar-header h1 {
   margin: 0;
-  color:#333;
+  color:white;
+  font-size:25px;
   font-family: Roboto;
-  text-decoration: underline;
+  background-color:#333;
+  padding:5px;
+  border-radius: 12px;
 }
 
 .app-sidebar-notes {
@@ -88,10 +92,13 @@ button:hover {
 .app-sidebar-note button {
   color: white;
   background-color: var(--secondary);
+  font-size:15px;
+  padding:4px 5px;
+  border-radius: 12px;
 }
 .app-sidebar-note button:hover {
   /* color:white; */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 15px #4b7ccc1a;
 }
 .app-sidebar-note p {
   margin: 10px 0;
@@ -166,14 +173,14 @@ textarea{
 .app-main-note-preview {
   border-top: 1px solid #ddd;
   overflow-y: scroll;
-  background-color: rgba(51, 51, 51, 0.486);
+  background-color: #333;
 }
 
 .preview-title {
-  padding: 25px 25px 0px 25px;
+  padding: 25px 25px 12px 25px;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: white;
+  background-color: #333;
+  color: var(--primary);
 }
 
 .markdown-preview {
@@ -229,7 +236,24 @@ textarea{
 .inputField {
   text-align: center;
 }
+.profile {
+  max-height: 50px;
+  text-align: center;
+}
 
+.user,
+.title h1 {
+  margin: 10px 0;
+}
+
+.user {
+  font-family: cursive;
+}
+
+.user strong {
+  font-family: "Noto Serif";
+  color: var(--primary);
+}
 .logoutbtn {
   background-color: var(--primary);
   border: 1px solid #333;
