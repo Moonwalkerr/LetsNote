@@ -14,8 +14,7 @@ function Home() {
     const newNote = {
       id: uuid(),
       title:"Untitled Note",
-      body: `This Editor is Markdown Enabled,
-               Click here to edit....`,
+      body: "",
       lastModified: Date.now(),  // JS Function 
 
     }
