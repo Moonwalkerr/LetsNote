@@ -14,7 +14,8 @@ const SaveNoteBtn = ({notes}) => {
         }
          catch(err){
              setError(err.message);
-         }        
+            }        
+            return databaseRef;
     })
 }
 return ( <div className="saveNote">
