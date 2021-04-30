@@ -6,13 +6,14 @@ import uuid from "react-uuid";
 import RightBar from "./rightBar";
 import {useAuth} from "../context/authCont";
 import useFireStore from "../hooks/useFirestore";
-
+import {fireStore} from "../keys/firebaseConfig";
 function Home() {
 
   const [activeNote, setactiveNote] = useState(false);
   const {currentUser} = useAuth();
 
-   const {data} = useFireStore(currentUser.email);
+   const {notes: data} = useFireStore(currentUser.email);
+   console.log(data);
   const [notes, setnotes] = useState(data ? data: []);
   const onAddNote = () =>{
     const newNote = {
@@ -25,9 +26,12 @@ function Home() {
     setnotes([newNote,...notes]);
   }
 
+ const databaseRef = fireStore.collection(currentUser.email);
   const deleteNote =(id)=>{
-    const newNotes = notes.filter(note=>note.id !== id);
-    setnotes(newNotes);
+     databaseRef.doc(id).delete()
+        .then(()=>{
+            console.log("Deleted Successfully");
+        })
   }
 
   const getActiveNote = ()=>{
@@ -50,9 +54,8 @@ function Home() {
 
   // Storing Notes in Local Storage of Browser
 
-  useEffect(()=>{
-    localStorage.setItem("notes",JSON.stringify(notes));
-  },[notes])
+  // useEffect(()=>{  databaseRef.add({...notes})
+  // },[notes])
 
   return ( 
   <div className="App">
