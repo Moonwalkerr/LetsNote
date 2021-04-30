@@ -8,7 +8,7 @@ const Sidebar = ({notes, onAddNote,deleteNote,activeNote,setactiveNote}) => {
          <div className="app-sidebar">
         
         <div className="app-sidebar-header">
-            <h1>Let's Note</h1>
+            <h1>Let's Note</h1> 
             <button className="addButton" onClick={onAddNote}>+</button>
         </div>
         <div className="app-sidebar-notes">
@@ -23,10 +23,7 @@ const Sidebar = ({notes, onAddNote,deleteNote,activeNote,setactiveNote}) => {
                     <button class="delete-btn" onClick={() =>deleteNote(note.id)}>Delete</button>
                 </div>
             <p>{note.body && note.body.substring(0,100)+"..."}</p>
-            <small className="note-meta">Last Modified {new Date(note.lastModified).toLocaleDateString("en-GB",{
-                hour:"2-digit",
-                minute:"2-digit"
-            })}</small>
+            <small className="note-meta">Last Modified {note.lastModified}</small>
             </div>
                 })
             }

@@ -9,14 +9,17 @@ const SaveNoteBtn = ({notes}) => {
    
     const saveNote = (note) =>{
          const databaseRef = fireStore.collection(currentUser.email);
-         try{  databaseRef.add({...note})
+         note.map((n)=>{
+         try{  databaseRef.add({...n})
         }
          catch(err){
              setError(err.message);
          }        
-    }
+    })
+}
 return ( <div className="saveNote">
-        {error && <Alert variant="danger">{error}</Alert>}
+        {error && <Alert 
+            style={{marginBottom:"0px"}} variant="danger">{error}</Alert>}
         <button 
         onClick={()=>saveNote(notes)}
         className="save">

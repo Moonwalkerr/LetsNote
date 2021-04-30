@@ -1,33 +1,38 @@
 import '../App.css';
 import MainBar from './main';
 import Sidebar from './sidebar';
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import uuid from "react-uuid";
 import RightBar from "./rightBar";
 import {useAuth} from "../context/authCont";
 import useFireStore from "../hooks/useFirestore";
-import {fireStore} from "../keys/firebaseConfig";
+import {fireStore,timestamp} from "../keys/firebaseConfig";
 function Home() {
 
   const [activeNote, setactiveNote] = useState(false);
   const {currentUser} = useAuth();
 
    const {notes: data} = useFireStore(currentUser.email);
-   console.log(data);
-  const [notes, setnotes] = useState(data ? data: []);
+  const [notes, setnotes] = useState([]);
+  // console.log(data);
   const onAddNote = () =>{
     const newNote = {
       id: uuid(),
       title:"Untitled Note",
       body: "",
-      lastModified: Date.now(),  // JS Function 
+      lastModified: timestamp,  // JS Function 
 
     }
     setnotes([newNote,...notes]);
   }
 
+  useEffect(() => {
+    setnotes(data);
+  },[data]);
+
  const databaseRef = fireStore.collection(currentUser.email);
-  const deleteNote =(id)=>{
+  
+ const deleteNote =(id)=>{
      databaseRef.doc(id).delete()
         .then(()=>{
             console.log("Deleted Successfully");
