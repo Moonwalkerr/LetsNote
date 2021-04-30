@@ -19,7 +19,7 @@ const Sidebar = ({notes, onAddNote,deleteNote,activeNote,setactiveNote}) => {
                     ${note.id === activeNote && "active"}`} 
                     onClick={()=>setactiveNote(note.id)}>
                 <div className="sidebar-note-title">
-                    <strong>{note.title}</strong>
+                    <strong className="side-note-title">{note.title}</strong>
                     <button onClick={() =>deleteNote(note.id)}>Delete</button>
                 </div>
             <p>{note.body && note.body.substring(0,100)+"..."}</p>
