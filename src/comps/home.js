@@ -3,7 +3,7 @@ import MainBar from './main';
 import Sidebar from './sidebar';
 import {useState,useEffect} from "react";
 import uuid from "react-uuid";
-
+import LogoutBtn from "./logoutBtn";
 
 function Home() {
   const [notes, setnotes] = useState(
@@ -62,6 +62,7 @@ function Home() {
     onUpdateNote={onUpdateNote}
     activeNote={getActiveNote()} // this function needs to be running always to pass current active note
     />
+    <LogoutBtn/>
     </div>
   );
 }
