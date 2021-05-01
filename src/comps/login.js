@@ -3,7 +3,7 @@ import {Card, Form, Button, Alert } from 'react-bootstrap';
 import {useAuth} from '../context/authCont';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Link,useHistory} from 'react-router-dom';
-
+import LogoComp from "./logoComp";
 const LoginForm = () => {
     
     const emailRef = useRef(null);
@@ -27,7 +27,10 @@ const LoginForm = () => {
         setLoading(false);
     }
     
-    return ( <div className="loginForm">
+    return ( 
+   <div className="login">
+      <LogoComp/>
+   <div className="loginForm">
         <Card className="SignUpCard">
           <Card.Body className="mt-4">
             <h2 className="text-center">Log In</h2>
@@ -47,7 +50,7 @@ const LoginForm = () => {
               </Form.Group>
               <Button 
               disabled={isLoading}
-               className="w-100" type="submit">
+              className="w-100" type="submit">
                 Login
               </Button>
             </Form>
@@ -66,6 +69,7 @@ const LoginForm = () => {
               Sign Up
               </Link>
         </div>
+                 </div>
        </div> );
 }
  
