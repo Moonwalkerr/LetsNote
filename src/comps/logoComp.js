@@ -3,7 +3,7 @@ const LogoComp = () => {
         {/* <h2>Hello</h2> */}
         <img
         style={{backgroundColor:"red"}}
-        src="../letsNote.png" alt=""/>
+        src="../assets/letsNote.png" alt=""/>
     </div> );
 }
  
