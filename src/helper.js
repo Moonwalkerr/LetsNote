@@ -9,7 +9,3 @@ export default function debounce(a,b,c){
     return (clearTimeout(d),d=setTimeout(h,b),c&&!d&&(e=a.apply(f,g)),e)
   }
 }
-
-export function removeHTMLTags (str) {
-  return str.replace(/<[^>]*>?/gm, '');
-};
